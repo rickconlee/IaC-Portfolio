@@ -24,3 +24,20 @@ Nathan knew that to navigate this complex transition, Dynalogic needed someone w
 Rick has his work cut out for him, because there is a lot to address here. There is a lot of data, and lots of old systems. 
 Basically, Rick needs to scoop up the data, move it to a completely new architechture and burn down the remnants of the old system. 
 
+## People In the Story
+
+IT Department
+Mason Carter - IT Manager, overseeing the department and driving tech modernization projects.
+Elena Rodriguez - Network Security Specialist, responsible for safeguarding the company's digital assets.
+Alex Kim - Website Administrator, the go-to person for all website-related queries and maintenance.
+Web Development
+Jordan Lee - Senior Web Developer, tasked with overhauling the company's online presence and implementing cutting-edge web technologies.
+Other Departments
+Harper Smith - Marketing Director, focuses on leveraging technology to enhance digital marketing strategies.
+Liam Johnson - Human Resources, spearheads the use of automation in recruiting and employee management.
+Sophia Martinez - Finance Analyst, utilizes advanced software for financial forecasting and analysis.
+Noah Zhang - Operations Manager, integrates tech solutions to streamline operations.
+Ava Patel - Customer Support Lead, implements chatbots and AI to improve customer service.
+Ethan Wong - Sales Executive, uses CRM and data analysis tools to boost sales strategies.
+
+
