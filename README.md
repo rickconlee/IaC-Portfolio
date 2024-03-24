@@ -1,19 +1,26 @@
-# IaC-Portfolio
-This is my DevOps infrastructure automation portfolio. It contains IaC automation in Ansible, Terraform, and others. 
+# Introduction
+This lab will serve as a larger scenario-type lab that will serve as the basis for my portfolio for a job interview with the University of British Columbia (UBC). It is modeled after some larger IT projects that I have done in the past, and is presented using technical storytelling to further enrich the experience.  
 
-# Practical DevOps Methodology
-The DevOps world is a tool-rich ecosystem. Many of the tools have overlapping areas of responsibility. Some have heavy vendor lock-in, and some use esoteric configuration languages. The bottom line is this: DevOps aims to bring simplicity to the world of deploying code and running systems at scale, not to overcomplicate things like I often see from developers who have *no* business being infrastructure people. DevOps tools should be simple, portable, and reliable. This is why my go-to tools are `Terraform,` `Ansible,` and when security is a higher-than-normal concern - `cfEngine.` 
+# Story Time!
+The company and the users are fake, but the story is quite real and is based on a recent project I successfully undertook. 
 
-# Scope of Rick's DevOps/IaC Portfolio
-So, like many of my industry peers, I have a small Homelab that I use to run various things that power my technical life. The initial setup was a "get everything running and return to it later" mentality. While I was busy making everyone else's cloud infrastructure awesome, I should have paid more attention to my own. A case of the cobbler's shoes having holes, if you will. That changes today. 
+## Subject: Dynalogic Innovations, A Company In Transition.
+Founding and Early Years (1980s): Dynalogic Innovations was conceived in the vibrant tech landscape of Upstate New York's Tech Valley, the brainchild of two recent graduates: Jordan Michaels from the University at Albany (UAlbany) and Alex Rivera from Siena College. The duo's shared passion for technology and innovation led to the establishment of Dynalogic, a company committed to developing custom software solutions for burgeoning local businesses. Their pioneering efforts were fueled by the rich academic and research environments of their alma maters, positioning Dynalogic as a burgeoning tech entity within the local community.
 
-In this portfolio, I wanted to demonstrate: 
+**Expansion and First Sale (1990s - Early 2000s):** Throughout the '90s, Dynalogic expanded its services to include networking and cybersecurity, capitalizing on the dot-com bubble's momentum. This period of growth was marked by significant contributions from key team members, including Elena Rodriguez and Sophia Martinez, who were part of a groundbreaking "Women in Tech" program at Russell Sage College in Troy, NY. Their expertise and leadership propelled Dynalogic into the national spotlight, leading to its acquisition by a larger tech conglomerate in the early 2000s.
 
-#### Using IaC and automation tools to execute data and state migration 
-This is important because I have a bunch of services with stateful data that need to be migrated into the new architecture that gets deployed as part of this project. This is something that is not often talked about, so I wanted 
+**Struggles and Second Sale (2000s - 2010s):** The following years tested Dynalogic's resilience as it navigated through corporate restructuring and the 2008 financial crisis under its new ownership. The spirit and innovation that had defined Dynalogic's early years in Tech Valley seemed to diminish until a group of investors, including former employees and Russell Sage alumnae, stepped in. In 2015, they acquired Dynalogic, determined to revitalize its founding ethos.
 
-#### Using Terraform for Infrastructure Pieces, Ansible for "Last Mile" Configuration 
-Terraform is great for defining the infrastrcuture itself, but once you get VM's deployed, you need to configure the VM's by installing software and running scripts to do that "last mile" of the marathon that is configuring infrastructure. We will be deploying Rancher to manage a small Kubernetes cluster, but there will need to be some odds and ends that need to be tweaked on the VM's before Rancher can manage those nodes. 
+**Modernization and Present Day:** The investors appointed Nathan Michaels, a UAlbany graduate and Jordan Michaels' son, as CEO. Under Nathan’s leadership, Dynalogic embarked on a modernization journey, focusing on emerging technologies such as AI and cloud computing. Nathan ensured that the company's innovation strategy remained deeply connected to Tech Valley's academic roots, fostering partnerships with UAlbany, Siena College, and Russell Sage to create internships and development programs, especially for women in technology.
 
-#### Managing support services with IaC 
-I want to make sure that all my support services that are living outside of Kubernetes are also properly managed as part of my IaC scheme. 
+Today, Dynalogic Innovations is a beacon of innovation in Tech Valley, blending its rich history with a forward-thinking approach. The company not only champions cutting-edge technology but also embodies the collaborative spirit and academic excellence of Albany, NY. Through its commitment to diversity and community engagement, Dynalogic continues to inspire the next generation of tech leaders, ensuring a bright future for the region's technology landscape.
+
+## DevOps Expert: Rick Conlee 
+As Dynalogic Innovations navigated through its ambitious modernization efforts, an unexpected challenge emerged. Their cyber insurance provider conducted a thorough risk assessment and delivered a sobering verdict: the company's reliance on outdated technologies, especially the critical systems running on Windows Server 2008, posed a significant security risk. **The insurance provider made it clear—without a comprehensive upgrade of their IT infrastructure, their coverage would be withdrawn.**
+
+Nathan Michaels, recognizing the gravity of the situation, saw an opportunity not just to secure insurance coverage but to catapult the company into the modern era of technology. However, Dynalogic's internal IT team, while exceptionally skilled in maintaining the status quo and leveraging vendor relationships to fulfill client needs, lacked the expertise to undertake a transformation of this scale.
+
+Nathan knew that to navigate this complex transition, Dynalogic needed someone who could bridge the gap between their rich legacy and the future of tech. Rick Conlee, a seasoned DevOps consultant known for his expertise in modernizing IT infrastructures, became the chosen architect for this mission. Nathan was convinced that Rick's forward-thinking approach to automation, cloud services, and security was precisely what Dynalogic needed.
+Rick has his work cut out for him, because there is a lot to address here. There is a lot of data, and lots of old systems. 
+Basically, Rick needs to scoop up the data, move it to a completely new architechture and burn down the remnants of the old system. 
+
