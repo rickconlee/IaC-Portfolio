@@ -4,7 +4,7 @@
 You will need the following items to get everything in this lab working correctly: 
 
 - Virtualbox 
-- A WIndows 2008 Server R2 ISO (I have mine from back when I had my TechNet subscription)
+- A Windows 2008 Server R2 ISO (I have mine from back when I had my TechNet subscription)
 - Ubuntu Server 22.04 ISO's 
 - Windows 10 or Windows 11 ISO's (for the workstations)
 
@@ -22,11 +22,19 @@ In order to demonstrate everything in the story, you will need to set up the leg
 
 #### Bootstrap the Windows 2008 R2 Instance
 
-I already created and tested an autounattended.xml file that you can mount as a floppy image. If you want to modify it by adding your own product key, or perform any other tweaks you'd like, you will need to create a new image file from scratch. 
+You'll need to spin up a copy of 2008 Server R2. I still have a bunch of ISO's I downloaded from TechNet back in the day. You will need to search the internet to find an ISO since I legally can't provide it here. Once you have the ISO, you will need to do the following:
 
-**Install with my `autounattend.xml`**
+**Create VM in virtualbox**
 
+- You will need to mirror my network config. I made a script that creates a new NAT network, which is called `LabNAT` and has a `10.230.10.0/24` subnet. The process for running the script is as follows: 
+```
+# If you are already in this folder
+cd ../
+chmod +x virtualbox-create.sh
+./virtualbox-create.sh
+``` 
+This will create the network that you will need once you have 2K8 up and runninfg. 
 - Create the VM in Virtualbox with 2vcpu, 4096mb or RAM and a 32GB HDD. 
-- Attach it to the host-only network. I created a new one called `vboxnet1` which created an IPv4 subnet of `192.168.57.1/24`
+- Attach it to the `LabNAT` network.
 - Fill out the unattended info in the setup wizard presented by the new VM Wizard 
-- On successful install, change the network adapter to have an address of `192.168.57.10`
+- On successful install, you'll need to share the root repository directory into the VM so you can run the scripts. Since Windows 2008 Server comes with IE7, most websites where you'd want to download tools from will be **broken**. Once you share it in, create a folder somewhere on `C:\` because executing this on the mapped network drive that gets presented to 2008 from the virtualbox host will throw errors or cause some scripts not to run correctly. 
