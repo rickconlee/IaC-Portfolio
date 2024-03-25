@@ -27,10 +27,6 @@ I already created and tested an autounattended.xml file that you can mount as a 
 **Install with my `autounattend.xml`**
 
 - Create the VM in Virtualbox with 2vcpu, 4096mb or RAM and a 32GB HDD. 
-- Right click on the server you just created and click settings 
-- Navigate to storage, click the "Add Controller" button under storage devices. And select the controller type that says "(Floppy)."
-- Click on the dick with the + icon to the right of the new floppy controller you just created, click **Add**
-- Navigate to the `../Legacy-To-Modern-Lab-ANsible/Setup/Windows2008Server` directory where you will find `unattended_install.img` floppy image, which contains `autounattend.xml` - double click on that file in the selection window. When it drops you back in the "Floppy Disk Selector," Click **Choose** in the bottom right. 
-- Go to **System** on the left and move "Optical" to the top of the boot order list using the little up arrow.
-- Click OK in the settings window. 
-- Double Click to start the server. At this time, it should go through the installation process completely unattended. 
+- Attach it to the host-only network. I created a new one called `vboxnet1` which created an IPv4 subnet of `192.168.57.1/24`
+- Fill out the unattended info in the setup wizard presented by the new VM Wizard 
+- On successful install, change the network adapter to have an address of `192.168.57.10`

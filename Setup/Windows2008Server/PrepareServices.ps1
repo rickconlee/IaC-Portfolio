@@ -19,22 +19,23 @@ $leaseDuration = "8" # Lease duration in days
 
 
 ########################
-# Set Up DNCP Servcices
+# SETUP SERVICES
 ########################
 
 
+# DHCP
+#######
+
 Add-WindowsFeature DHCP
 
-
-
-# Create the DHCP scope
+# Create scope
 netsh dhcp server \\$dhcpServer add scope $scopeStartIP $subnetMask $scopeName
 netsh dhcp server \\$dhcpServer scope $scopeStartIP set state 1
 
-# Configure the DHCP scope options
+# Configure scope options
 netsh dhcp server \\$dhcpServer scope $scopeStartIP set optionvalue 3 IPADDRESS $defaultGateway
 netsh dhcp server \\$dhcpServer scope $scopeStartIP set optionvalue 6 IPADDRESS $dnsServers
 netsh dhcp server \\$dhcpServer scope $scopeStartIP set optionvalue 51 DWORD $leaseDuration
 
-# Configure the IP address range for the DHCP scope
+# Configure the IP address we want to hand out in the scope
 netsh dhcp server \\$dhcpServer scope $scopeStartIP add iprange $scopeStartIP $scopeEndIP
