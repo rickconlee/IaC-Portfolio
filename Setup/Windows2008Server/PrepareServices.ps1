@@ -8,13 +8,13 @@ Import-Module ServerManager
 ###########################
 
 # DHCP Service Configuration Variables 
-$dhcpServer = "Server1" # The server where DHCP services is enabled
+$dhcpServer = "SERVER1" # The server where DHCP services is enabled
 $scopeName = "Primary DHCP Scope" # Give a friendly name to the DHCP scope
-$scopeStartIP = "192.168.57.20" # Start of scope
-$scopeEndIP = "192.168.57.30" # End of scope
+$scopeStartIP = "10.230.10.20" # Start of scope
+$scopeEndIP = "10.230.10.30" # End of scope
 $subnetMask = "255.255.255.0" # Netmask
-$defaultGateway = "192.168.57.1" # Default gateway that you want to hand to clients
-$dnsServers = "192.168.57.10" # Separate multiple DNS servers with a comma
+$defaultGateway = "10.230.10.1" # Default gateway that you want to hand to clients
+$dnsServers = "10.230.10.10" # Separate multiple DNS servers with a comma
 $leaseDuration = "8" # Lease duration in days
 
 
