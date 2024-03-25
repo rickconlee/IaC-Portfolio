@@ -27,6 +27,7 @@ $leaseDuration = "8" # Lease duration in days
 #######
 
 Add-WindowsFeature DHCP
+Start-Service -Name DHCPServer
 Get-Service -Name DHCPServer
 
 # Create scope
