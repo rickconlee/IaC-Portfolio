@@ -38,3 +38,4 @@ This will create the network that you will need once you have 2K8 up and runninf
 - Attach it to the `LabNAT` network.
 - Fill out the unattended info in the setup wizard presented by the new VM Wizard 
 - On successful install, you'll need to share the root repository directory into the VM so you can run the scripts. Since Windows 2008 Server comes with IE7, most websites where you'd want to download tools from will be **broken**. Once you share it in, create a folder somewhere on `C:\` because executing this on the mapped network drive that gets presented to 2008 from the virtualbox host will throw errors or cause some scripts not to run correctly. 
+- Run Powershell as an adminstrator and run `Set-ExecutionPolicy RemoteSigned` so we can run our scripts. 

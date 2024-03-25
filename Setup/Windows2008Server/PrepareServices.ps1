@@ -8,7 +8,7 @@ Import-Module ServerManager
 ###########################
 
 # DHCP Service Configuration Variables 
-$dhcpServer = "SERVER1" # The server where DHCP services is enabled
+$dhcpServer = "LOCALHOST" # The server where DHCP services is enabled
 $scopeName = "Primary DHCP Scope" # Give a friendly name to the DHCP scope
 $scopeStartIP = "10.230.10.20" # Start of scope
 $scopeEndIP = "10.230.10.30" # End of scope
@@ -27,15 +27,17 @@ $leaseDuration = "8" # Lease duration in days
 #######
 
 Add-WindowsFeature DHCP
+Get-Service -Name DHCPServer
 
 # Create scope
-netsh dhcp server \\$dhcpServer add scope $scopeStartIP $subnetMask $scopeName
-netsh dhcp server \\$dhcpServer scope $scopeStartIP set state 1
+& netsh dhcp server \\$dhcpServer add scope $scopeStartIP $subnetMask "$scopeName"
+& netsh dhcp server \\$dhcpServer scope $scopeStartIP set state 1
 
 # Configure scope options
-netsh dhcp server \\$dhcpServer scope $scopeStartIP set optionvalue 3 IPADDRESS $defaultGateway
-netsh dhcp server \\$dhcpServer scope $scopeStartIP set optionvalue 6 IPADDRESS $dnsServers
-netsh dhcp server \\$dhcpServer scope $scopeStartIP set optionvalue 51 DWORD $leaseDuration
+& netsh dhcp server \\$dhcpServer scope $scopeStartIP set optionvalue 3 IPADDRESS $defaultGateway
+& netsh dhcp server \\$dhcpServer scope $scopeStartIP set optionvalue 6 IPADDRESS $dnsServers
+& netsh dhcp server \\$dhcpServer scope $scopeStartIP set optionvalue 51 DWORD $leaseDuration
 
-# Configure the IP address we want to hand out in the scope
-netsh dhcp server \\$dhcpServer scope $scopeStartIP add iprange $scopeStartIP $scopeEndIP
+# Configure the IP address range for the DHCP scope
+& netsh dhcp server \\$dhcpServer scope $scopeStartIP add iprange $scopeStartIP $scopeEndIP
+
